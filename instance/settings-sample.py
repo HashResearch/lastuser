@@ -15,7 +15,7 @@ GA_CODE = ''
 
 #: Database backend
 SQLALCHEMY_BINDS = {
-    'lastuser': 'sqlite:///test.db',
+    'lastuser': 'postgresql://hasgeek:hasgeek@localhost:5432/lastuser',
     }
 
 #: Cache type
