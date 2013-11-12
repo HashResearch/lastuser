@@ -62,8 +62,8 @@ class RegisterClientForm(Form):
             self.org = orgs[0]
 
     def _check_domain(self, url1, url2):
-        parsed_url1_uri, parsed_url2_uri = urlparse(url1), urlparse(url2)
-        return parsed_url1_uri.netloc == parsed_url2_uri.netloc and parsed_url1_uri.scheme == parsed_url2_uri.scheme
+        parsed_url1, parsed_url2 = urlparse(url1), urlparse(url2)
+        return parsed_url1.netloc == parsed_url2.netloc and parsed_url1.scheme == parsed_url2.scheme
 
     def validate_redirect_uri(self, field):
         if not self._check_domain(self.website.data, field.data):
